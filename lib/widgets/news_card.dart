@@ -6,8 +6,8 @@ import 'package:frontend/theme/theme.dart';
 
 class NewsCard extends StatelessWidget {
   String title;
-  String img;
   String category;
+  String img;
 
   NewsCard(this.title, this.category, this.img);
 
@@ -79,7 +79,7 @@ class NewsCard extends StatelessWidget {
           child: ClipRRect(
               borderRadius: BorderRadius.circular(10),
               child: Image.network(
-                'https://source.unsplash.com/random/1000x200?car',
+                img,
                 fit: BoxFit.cover,
                 width: double.infinity,
               )),
@@ -87,13 +87,13 @@ class NewsCard extends StatelessWidget {
         Container(
           margin: EdgeInsets.symmetric(vertical: 5),
           child: Text(
-            'Kategori',
+            category,
             style: orangeText.copyWith(fontSize: 12),
           ),
         ),
         Container(
           child: Text(
-            'perkembangan pemograman flutter semenjak versi pertama',
+            title,
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
             style: primaryText.copyWith(fontSize: 16, fontWeight: bold),

@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
                 children: List.generate(columns, (columnIndex) {
                   return Expanded(child: Container(
                     margin: EdgeInsets.all(10),
-                    child: NewsCard("a", "s", "t")));
+                    child: NewsCard("judul", "kategori", "https://source.unsplash.com/random/1000x200?car")));
                 }),
               );
             }),
