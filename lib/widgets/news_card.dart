@@ -11,7 +11,7 @@ class NewsCard extends StatelessWidget {
 
   NewsCard(this.title, this.category, this.img);
 
-  optionButton() {
+  Widget threeDotButton() {
     return Container(
       child: Text(
         '•••',
@@ -22,37 +22,53 @@ class NewsCard extends StatelessWidget {
     );
   }
 
-  option(){
-    return Container(
-                height: 40,
-                width: double.infinity,
-                child: Row(
-                  children: [
-                    Icon(Icons.zoom_out_outlined, color: secondaryColor,),
-                    Padding(padding: EdgeInsets.symmetric(horizontal: 8)),
-                    Text('option', ),
-                  ],
-                ),
-              );
+  Widget threeDotMenu(IconData icon, String title, Function onTap) {
+    return GestureDetector(
+      onTap: (){
+        onTap();
+      },
+      child: Container(
+        height: 40,
+        width: double.infinity,
+        child: Row(
+          children: [
+            Icon(
+              icon,
+              color: secondaryColor,
+            ),
+            Padding(padding: EdgeInsets.symmetric(horizontal: 8)),
+            Text(
+              title,
+            ),
+          ],
+        ),
+      ),
+    );
   }
 
-  optionFunc(context) {
-    return GestureDetector(
-      onTap: () async {
-        await Flushbar(
-          backgroundColor: whiteColor,
-          messageText:Column(
-            children: [
-              option(),
-              option(),
-              option(),
-            ],
-          ),
-          isDismissible: true,
-        ).show(context);
-      },
-      child: optionButton(),
+  void showSnackbar(context) {
+    late Flushbar flushbar;
+
+    flushbar = Flushbar(
+      duration: null,
+      backgroundColor: whiteColor,
+      blockBackgroundInteraction: true,
+      routeBlur: 0.5,
+      routeColor: Colors.black54,
+      messageText: Column(
+        children: [
+          threeDotMenu(Icons.chat, 'Lihat Komentar', (){}),
+          threeDotMenu(Icons.bookmark_border, 'Simpan ke baca nanti', (){}),
+          threeDotMenu(Icons.share, 'Bagikan', (){}),
+          Divider(thickness: 1, ),
+          threeDotMenu(Icons.dangerous_outlined, 'Batalkan', (){
+            flushbar.dismiss();
+          })
+        ],
+      ),
     );
+
+    flushbar.show(context);
   }
 
   @override
@@ -83,11 +99,14 @@ class NewsCard extends StatelessWidget {
             style: primaryText.copyWith(fontSize: 16, fontWeight: bold),
           ),
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            optionFunc(context)
-          ],
+        GestureDetector(
+          onTap: () {
+            showSnackbar(context);
+          },
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [threeDotButton()],
+          ),
         )
       ]),
     );
