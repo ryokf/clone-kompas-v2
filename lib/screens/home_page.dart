@@ -17,13 +17,16 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
-      body: Container(
-        child: Center(
-          child: NewsCard('a', 'a', 'https://source.unsplash.com/random/1500×1500/?fruit'),
+        body: Container(
+      child: Center(
+        child: NewsTile(
+          "perkembangan pemograman flutter semenjak versi pertama",
+          "pemograman",
+          "https://source.unsplash.com/random/1500×1500/?fruit",
+          "12 desember 2012"
         ),
-      )
-    );
+      ),
+    ));
   }
 }

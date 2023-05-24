@@ -2,8 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:frontend/theme/theme.dart';
+import 'package:frontend/widgets/show_snackbar.dart';
 
 class NewsTile extends StatelessWidget {
+  String title;
+  String category;
+  String img;
+  String date;
+
+  NewsTile(this.title, this.category, this.img, this.date);
+
   Widget titleAndCat(context) {
     return Container(
       width: MediaQuery.of(context).size.width * 60/100,
@@ -12,12 +20,12 @@ class NewsTile extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'kategori',
+              this.category,
               style: orangeText,
             ),
             Padding(padding: EdgeInsets.all(3)),
             Text(
-              'perkembangan pemograman flutter semenjak versi pertama',
+              this.title,
               style: primaryText.copyWith(fontWeight: bold, fontSize: 16),
             )
           ],
@@ -35,26 +43,36 @@ class NewsTile extends StatelessWidget {
           child: ClipRRect(
            borderRadius: BorderRadius.circular(10),
               child: Image.network(
-                "https://source.unsplash.com/random/1500×1500/?fruit",
+                this.img,
                 fit: BoxFit.cover,
                 width: double.infinity,
       ))),
     );
   }
 
-  Widget threeDotButton() {
-    return Container(
-      child: Text(
-        '•••',
-        style: primaryText.copyWith(
-            fontSize: 20, fontWeight: bold, color: secondaryColor),
-        textAlign: TextAlign.right,
+  Widget threeDotButton(context) {
+    return GestureDetector(
+      onTap: () {
+        ShowSnackbar.show(context);
+      },
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          Container(
+            child: Text(
+              '•••',
+              style: primaryText.copyWith(
+                  fontSize: 20, fontWeight: bold, color: secondaryColor),
+              textAlign: TextAlign.right,
+            ),
+          )
+        ],
       ),
     );
   }
 
   Widget releaseDate(){
-    return Text('12-12-1212');
+    return Text(this.date, style: primaryText,);
   }
 
   @override
@@ -72,7 +90,7 @@ class NewsTile extends StatelessWidget {
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [releaseDate(), threeDotButton()],
+            children: [releaseDate(), threeDotButton(context)],
           )
         ],
       ),

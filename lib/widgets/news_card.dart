@@ -82,4 +82,4 @@ class NewsCard extends StatelessWidget {
   }
 }
 
-// https://source.unsplash.com/random/1000x500
+// https://source.unsplash.com/random/1500×1500/?fruit
