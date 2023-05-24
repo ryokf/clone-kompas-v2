@@ -32,7 +32,7 @@ class Button extends StatelessWidget {
           child: Center(
               child: Text(
             this.title,
-            style: whiteText,
+            style: whiteText.copyWith(fontWeight: bold, fontSize: 16),
           )),
           onTap: () {},
         ),

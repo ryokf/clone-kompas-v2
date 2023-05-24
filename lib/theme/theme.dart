@@ -4,8 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 // color
 Color primary1Color = Colors.blue;
 Color primary1FadeColor = Colors.blue.shade200;
-Color primary2Color = Colors.orange;
-Color primary2FadeColor = Colors.orange.shade200;
+Color primary2Color = Colors.deepOrange;
+Color primary2FadeColor = Colors.deepOrange.shade200;
 Color secondaryColor = Colors.grey;
 Color black1Color = Colors.black;
 Color black2Color = Colors.black87;
