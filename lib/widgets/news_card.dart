@@ -70,7 +70,7 @@ class NewsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      // padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
       height: MediaQuery.of(context).size.height / 2.5,
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         thumbnail(),

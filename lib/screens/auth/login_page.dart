@@ -4,9 +4,11 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:frontend/theme/theme.dart';
 import 'package:frontend/widgets/button.dart';
 import 'package:frontend/widgets/input_field.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginPage extends StatelessWidget {
   TextEditingController emailController = TextEditingController(text: '');
+
   TextEditingController passwordController = TextEditingController(text: '');
 
   Widget header() {
@@ -62,12 +64,17 @@ class LoginPage extends StatelessWidget {
     );
   }
 
-  Widget footer() {
+  Widget footer(BuildContext context) {
     return Container(
       child: Column(children: [
-        Text(
-          'Tidak punya KG Media ID?',
-          style: blueText.copyWith(decoration: TextDecoration.underline, fontSize: 16),
+        GestureDetector(
+          onTap: () {
+            context.go('/register');
+          },
+          child: Text(
+            'Tidak punya KG Media ID?',
+            style: blueText.copyWith(decoration: TextDecoration.underline, fontSize: 16),
+          ),
         ),
         SizedBox(height: 10,),
         Text(
@@ -75,9 +82,14 @@ class LoginPage extends StatelessWidget {
           style: secondaryText.copyWith(fontWeight: bold, fontSize: 16),
         ),
         SizedBox(height: 15,),
-        Text(
-          'Nanti saja',
-          style: primaryText.copyWith(fontWeight: bold, fontSize: 16),
+        GestureDetector(
+          onTap: () {
+            context.go('/');
+          },
+          child: Text(
+            'Nanti saja',
+            style: primaryText.copyWith(fontWeight: bold, fontSize: 16),
+          ),
         ),
       ]),
     );
@@ -101,7 +113,7 @@ class LoginPage extends StatelessWidget {
             Spacer(
               flex: 2,
             ),
-            footer(),
+            footer(context),
             Spacer(
               flex: 2,
             ),
