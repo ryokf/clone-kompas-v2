@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
       if (selectedIndex == 0) {
         return NewsPage.appBarTitle();
       } else if (selectedIndex == 1) {
-        return Text('Favorites');
+        return NewsInterestPage.appBarTitle();
       } else {
         return Text('Profile');
       }
