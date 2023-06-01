@@ -9,6 +9,7 @@ import 'package:frontend/widgets/button.dart';
 import 'package:frontend/widgets/input_field.dart';
 import 'package:frontend/widgets/news_card.dart';
 import 'package:frontend/widgets/news_tile.dart';
+import 'package:go_router/go_router.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -18,7 +19,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
 
-  PreferredSizeWidget appBar() {
+  PreferredSizeWidget appBar(context) {
     Widget showTitle(int selectedIndex) {
       if (selectedIndex == 0) {
         return NewsPage.appBarTitle();
@@ -45,7 +46,7 @@ class _HomePageState extends State<HomePage> {
       actions: [
         GestureDetector(
           onTap: () {
-            
+            GoRouter.of(context).push('/search');
           },
           child: Icon(
             Icons.search,
@@ -85,7 +86,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBar(),
+      appBar: appBar(context),
       body: showPage(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
