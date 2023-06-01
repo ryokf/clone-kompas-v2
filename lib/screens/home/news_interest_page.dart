@@ -73,6 +73,7 @@ class NewsInterestPage extends StatelessWidget {
             'Sesuai Minatmu',
             style: primaryText.copyWith(fontSize: 24, fontWeight: bold),
           ),
+          SizedBox(height: 20,),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -101,31 +102,47 @@ class NewsInterestPage extends StatelessWidget {
     return Container(
       child: Column(
         children: [
-          NewsTile(
-              "perkembangan flutter semenjak versi pertama",
-              "pemogaraman",
-              "https://source.unsplash.com/random/1500×1500/?programming",
-              "12-12-2012"),
-          NewsTile(
-              "perkembangan flutter semenjak versi pertama",
-              "pemogaraman",
-              "https://source.unsplash.com/random/1500×1500/?programming",
-              "12-12-2012"),
-          NewsTile(
-              "perkembangan flutter semenjak versi pertama",
-              "pemogaraman",
-              "https://source.unsplash.com/random/1500×1500/?programming",
-              "12-12-2012"),
-          NewsTile(
-              "perkembangan flutter semenjak versi pertama",
-              "pemogaraman",
-              "https://source.unsplash.com/random/1500×1500/?programming",
-              "12-12-2012"),
-          NewsTile(
-              "perkembangan flutter semenjak versi pertama",
-              "pemogaraman",
-              "https://source.unsplash.com/random/1500×1500/?programming",
-              "12-12-2012"),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10),
+            child: NewsTile(
+                "perkembangan flutter semenjak versi pertama",
+                "pemogaraman",
+                "https://source.unsplash.com/random/1500×1500/?programming",
+                "12-12-2012"),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10),
+            child: NewsTile(
+                "perkembangan flutter semenjak versi pertama",
+                "pemogaraman",
+                "https://source.unsplash.com/random/1500×1500/?programming",
+                "12-12-2012"),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10),
+            child: NewsTile(
+                "perkembangan flutter semenjak versi pertama",
+                "pemogaraman",
+                "https://source.unsplash.com/random/1500×1500/?programming",
+                "12-12-2012"),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10),
+            child: NewsTile(
+                "perkembangan flutter semenjak versi pertama",
+                "pemogaraman",
+                "https://source.unsplash.com/random/1500×1500/?programming",
+                "12-12-2012"),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10),
+            child: NewsTile(
+                "perkembangan flutter semenjak versi pertama",
+                "pemogaraman",
+                "https://source.unsplash.com/random/1500×1500/?programming",
+                "12-12-2012"),
+          ),
+          
         ],
       ),
     );

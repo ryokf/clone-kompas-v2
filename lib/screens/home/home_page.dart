@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:frontend/screens/home/menu_page.dart';
 import 'package:frontend/screens/home/news_interest_page.dart';
 import 'package:frontend/screens/home/news_page.dart';
 import 'package:frontend/theme/theme.dart';
@@ -24,7 +25,7 @@ class _HomePageState extends State<HomePage> {
       } else if (selectedIndex == 1) {
         return NewsInterestPage.appBarTitle();
       } else {
-        return Text('Profile');
+        return MenuPage.appBarTitle();
       }
     }
 
@@ -42,9 +43,14 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       actions: [
-        Icon(
-          Icons.search,
-          size: 30,
+        GestureDetector(
+          onTap: () {
+            
+          },
+          child: Icon(
+            Icons.search,
+            size: 30,
+          ),
         ),
         SizedBox(
           width: 10,
@@ -66,7 +72,7 @@ class _HomePageState extends State<HomePage> {
     } else if (selectedIndex == 1) {
       return NewsInterestPage();
     } else {
-      return Text('Profile');
+      return MenuPage();
     }
   }
 
