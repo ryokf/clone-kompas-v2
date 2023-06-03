@@ -56,9 +56,14 @@ class _HomePageState extends State<HomePage> {
         SizedBox(
           width: 10,
         ),
-        Icon(
-          Icons.person,
-          size: 30,
+        GestureDetector(
+          onTap: () {
+            GoRouter.of(context).push('/setting');
+          },
+          child: Icon(
+            Icons.person,
+            size: 30,
+          ),
         ),
         SizedBox(
           width: 20,
