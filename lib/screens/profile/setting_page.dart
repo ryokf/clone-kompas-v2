@@ -66,7 +66,7 @@ class SettingPage extends StatelessWidget {
   Widget profileSection(context) {
     return GestureDetector(
       onTap: () {
-        
+         GoRouter.of(context).push('/profile-detail');
       },
       child: Column(
         children: [
