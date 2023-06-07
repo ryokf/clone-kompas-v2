@@ -2,6 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:frontend/screens/auth/login_page.dart';
 import 'package:frontend/screens/auth/register_page.dart';
 import 'package:frontend/screens/home/home_page.dart';
+import 'package:frontend/screens/profile/edit_profile_page.dart';
 import 'package:frontend/screens/profile/profile_detail_page.dart';
 import 'package:frontend/screens/profile/setting_page.dart';
 import 'package:frontend/screens/search/search_page.dart';
@@ -47,5 +48,10 @@ final route = GoRouter(initialLocation: '/', routes: [
     path: '/profile-detail',
     name: 'profile',
     builder: (context, state) => ProfileDetailPage(),
+  ),
+  GoRoute(
+    path: '/edit-profile',
+    name: 'editProfile',
+    builder: (context, state) => EditProfilePage(),
   ),
 ]);
