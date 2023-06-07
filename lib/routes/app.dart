@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:frontend/screens/auth/login_page.dart';
 import 'package:frontend/screens/auth/register_page.dart';
+import 'package:frontend/screens/category/news_category_page.dart';
 import 'package:frontend/screens/home/home_page.dart';
 import 'package:frontend/screens/profile/edit_profile_page.dart';
 import 'package:frontend/screens/profile/profile_detail_page.dart';
@@ -53,5 +54,10 @@ final route = GoRouter(initialLocation: '/', routes: [
     path: '/edit-profile',
     name: 'editProfile',
     builder: (context, state) => EditProfilePage(),
+  ),
+  GoRoute(
+    path: '/news-category',
+    name: 'newsCategory',
+    builder: (context, state) => NewsCategory(),
   ),
 ]);

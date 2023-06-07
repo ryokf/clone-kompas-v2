@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter/widgets.dart';
 import 'package:frontend/theme/theme.dart';
+import 'package:go_router/go_router.dart';
 
 class MenuPage extends StatelessWidget {
   static Widget appBarTitle() {
@@ -12,10 +13,10 @@ class MenuPage extends StatelessWidget {
     );
   }
 
-  Widget categoryBox() {
+  Widget categoryBox(context) {
     return GestureDetector(
       onTap: () {
-        
+        GoRouter.of(context).push('/news-category');
       },
       child: Container(
         child: Stack(
@@ -81,15 +82,15 @@ class MenuPage extends StatelessWidget {
         mainAxisSpacing: 10,
         crossAxisSpacing: 10,
         children: [
-          categoryBox(),
-          categoryBox(),
-          categoryBox(),
-          categoryBox(),
-          categoryBox(),
-          categoryBox(),
-          categoryBox(),
-          categoryBox(),
-          categoryBox(),
+          categoryBox(context),
+          categoryBox(context),
+          categoryBox(context),
+          categoryBox(context),
+          categoryBox(context),
+          categoryBox(context),
+          categoryBox(context),
+          categoryBox(context),
+          categoryBox(context),
         ],
       ),
     );
